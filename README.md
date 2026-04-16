@@ -69,4 +69,6 @@ You can also set:
 - Graph-based: `stgcn`, `astgcn`, `gwn`, `pdformer`
 - Proposed method: `CAMEL`
 
-# CAMEL
+## 5. Datasets
+
+- XXLTraffic Benchmark: https://1drv.ms/f/s!Au2cJRs-_u93hvMeZJBXJROA3lrHlA?e=3JJlt5
