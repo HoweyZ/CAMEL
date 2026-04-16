@@ -1,0 +1,42 @@
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=548, task_name='long_term_forecast', is_training=1, model_id='tfnsw_fc_96_336_548', model='FreqCycle', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.3, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='test', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=0.0, camel_memory_size=1196, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.1, lambda_ode=0.05, lambda_smooth=0.01, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=True, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_fc_96_336_548_FreqCycle_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap548_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 46436
+val 6520
+test 6519
+	iters: 100, epoch: 1 | loss: 1.1969297
+	speed: 0.0141s/iter; left time: 408.3968s
+Epoch: 1 cost time: 1.2918641567230225
+Epoch: 1, Steps: 145 | Train Loss: 1.2138108 Vali Loss: 0.9417711 Test Loss: 1.0407942
+Validation loss decreased (inf --> 0.941771).  Saving model ...
+	iters: 100, epoch: 2 | loss: 1.0970407
+	speed: 0.0275s/iter; left time: 792.1728s
+Epoch: 2 cost time: 0.8135621547698975
+Epoch: 2, Steps: 145 | Train Loss: 1.1342591 Vali Loss: 0.9462538 Test Loss: 1.0057398
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 0.9879677
+	speed: 0.0276s/iter; left time: 788.9561s
+Epoch: 3 cost time: 0.8738775253295898
+Epoch: 3, Steps: 145 | Train Loss: 1.1111650 Vali Loss: 0.9804172 Test Loss: 0.9850481
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 1.2335746
+	speed: 0.0277s/iter; left time: 789.1312s
+Epoch: 4 cost time: 0.8498382568359375
+Epoch: 4, Steps: 145 | Train Loss: 1.0881021 Vali Loss: 1.0170141 Test Loss: 1.0068148
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 1.1106387
+	speed: 0.0271s/iter; left time: 768.9070s
+Epoch: 5 cost time: 0.8305730819702148
+Epoch: 5, Steps: 145 | Train Loss: 1.0749336 Vali Loss: 1.0456455 Test Loss: 1.0253818
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 1.1017737
+	speed: 0.0271s/iter; left time: 763.7347s
+Epoch: 6 cost time: 0.8264386653900146
+Epoch: 6, Steps: 145 | Train Loss: 1.0682507 Vali Loss: 1.0328310 Test Loss: 0.9918777
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_fc_96_336_548_FreqCycle_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap548_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 6519
+mse:1.0407942533493042, mae:0.7813282012939453
+>>>>>>>Overall time: 19 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

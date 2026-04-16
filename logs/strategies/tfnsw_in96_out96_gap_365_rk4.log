@@ -1,0 +1,1167 @@
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 312, in train
+    outputs = outputs[:, -self.args.pred_len:, f_dim:]
+              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 312, in train
+    outputs = outputs[:, -self.args.pred_len:, f_dim:]
+              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0909s/iter; left time: 2882.0054s
+Epoch: 1 cost time: 13.192127466201782
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.5001s/iter; left time: 15774.8746s
+Epoch: 2 cost time: 12.789220809936523
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4926s/iter; left time: 15459.5723s
+Epoch: 3 cost time: 12.684405326843262
+Epoch: 3, Steps: 159 | Train Loss: 0.7730265 Vali Loss: 0.8915099 Test Loss: 0.9526063
+Validation loss decreased (0.900380 --> 0.891510).  Saving model ...
+	iters: 100, epoch: 4 | loss: 0.7308408
+	speed: 0.4833s/iter; left time: 15091.5348s
+Epoch: 4 cost time: 12.36807632446289
+Epoch: 4, Steps: 159 | Train Loss: 0.7682194 Vali Loss: 0.8854219 Test Loss: 0.9510107
+Validation loss decreased (0.891510 --> 0.885422).  Saving model ...
+	iters: 100, epoch: 5 | loss: 0.8204319
+	speed: 0.4785s/iter; left time: 14863.0911s
+Epoch: 5 cost time: 12.289791107177734
+Epoch: 5, Steps: 159 | Train Loss: 0.7656509 Vali Loss: 0.8854657 Test Loss: 0.9457368
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 6 | loss: 0.7839979
+	speed: 0.4665s/iter; left time: 14416.5207s
+Epoch: 6 cost time: 12.240903377532959
+Epoch: 6, Steps: 159 | Train Loss: 0.7637815 Vali Loss: 0.8793412 Test Loss: 0.9492643
+Validation loss decreased (0.885422 --> 0.879341).  Saving model ...
+	iters: 100, epoch: 7 | loss: 0.7247646
+	speed: 0.4686s/iter; left time: 14409.1204s
+Epoch: 7 cost time: 12.5496826171875
+Epoch: 7, Steps: 159 | Train Loss: 0.7626067 Vali Loss: 0.8779941 Test Loss: 0.9543201
+Validation loss decreased (0.879341 --> 0.877994).  Saving model ...
+	iters: 100, epoch: 8 | loss: 0.7801562
+	speed: 0.5105s/iter; left time: 15615.1379s
+Epoch: 8 cost time: 14.126247644424438
+Epoch: 8, Steps: 159 | Train Loss: 0.7618048 Vali Loss: 0.8781036 Test Loss: 0.9483416
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 9 | loss: 0.7677746
+	speed: 0.5222s/iter; left time: 15890.5811s
+Epoch: 9 cost time: 13.441200733184814
+Epoch: 9, Steps: 159 | Train Loss: 0.7609587 Vali Loss: 0.8764896 Test Loss: 0.9453877
+Validation loss decreased (0.877994 --> 0.876490).  Saving model ...
+	iters: 100, epoch: 10 | loss: 0.7675792
+	speed: 0.4882s/iter; left time: 14777.2749s
+Epoch: 10 cost time: 12.586646318435669
+Epoch: 10, Steps: 159 | Train Loss: 0.7606719 Vali Loss: 0.8668427 Test Loss: 0.9613366
+Validation loss decreased (0.876490 --> 0.866843).  Saving model ...
+	iters: 100, epoch: 11 | loss: 0.7894384
+	speed: 0.4690s/iter; left time: 14122.2430s
+Epoch: 11 cost time: 12.252943992614746
+Epoch: 11, Steps: 159 | Train Loss: 0.7603136 Vali Loss: 0.8756064 Test Loss: 0.9482393
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 12 | loss: 0.7816384
+	speed: 0.4651s/iter; left time: 13931.2925s
+Epoch: 12 cost time: 12.117309808731079
+Epoch: 12, Steps: 159 | Train Loss: 0.7600325 Vali Loss: 0.8742762 Test Loss: 0.9496497
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 13 | loss: 0.7498958
+	speed: 0.4761s/iter; left time: 14184.8390s
+Epoch: 13 cost time: 12.889444589614868
+Epoch: 13, Steps: 159 | Train Loss: 0.7595402 Vali Loss: 0.8715708 Test Loss: 0.9480252
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 14 | loss: 0.7070188
+	speed: 0.4696s/iter; left time: 13916.3459s
+Epoch: 14 cost time: 12.144516706466675
+Epoch: 14, Steps: 159 | Train Loss: 0.7593782 Vali Loss: 0.8716832 Test Loss: 0.9530886
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 15 | loss: 0.7935362
+	speed: 0.4765s/iter; left time: 14046.0663s
+Epoch: 15 cost time: 12.643993139266968
+Epoch: 15, Steps: 159 | Train Loss: 0.7593921 Vali Loss: 0.8694682 Test Loss: 0.9512438
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9613364338874817, mae:0.7862140536308289
+>>>>>>>Overall time: 760 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0904s/iter; left time: 2865.6936s
+Epoch: 1 cost time: 13.239773035049438
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4688s/iter; left time: 14787.6379s
+Epoch: 2 cost time: 12.04368543624878
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 369, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 237, in vali
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1331, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1321, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1233, in forward
+    loss_ode, loss_smooth = self.lde.ode_reconstruction_loss(x_scalar)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1130, in ode_reconstruction_loss
+    z_mid = self.euler_integrate(z0, 0, max(1, half // 2))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1113, in euler_integrate
+    z = z + dt * self.ode_func(t, z)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1087, in forward
+    adj = self.adaptive_adj(t_feat)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1080, in adaptive_adj
+    mod = self.time_mod(t_feat).reshape(-1, self.n_nodes, self.n_nodes)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0917s/iter; left time: 2906.9861s
+Epoch: 1 cost time: 13.431796789169312
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+is_saved
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 380, in train
+    self._visualize_lde(last_batch_x, epoch, setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 100, in _visualize_lde
+    n_dims_show = min(6, lde.d_latent)
+                         ^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1965, in __getattr__
+    raise AttributeError(
+AttributeError: 'LatentDynamicsExtrapolator' object has no attribute 'd_latent'
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0873s/iter; left time: 2767.2421s
+Epoch: 1 cost time: 12.944791793823242
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+is_saved
+  [LDE vis] Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4832s/iter; left time: 15239.5836s
+Epoch: 2 cost time: 13.206918239593506
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+is_saved
+  [LDE vis] Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4872s/iter; left time: 15290.3526s
+Epoch: 3 cost time: 12.365061044692993
+Epoch: 3, Steps: 159 | Train Loss: 0.7730265 Vali Loss: 0.8915099 Test Loss: 0.9526063
+is_saved
+  [LDE vis] Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.900380 --> 0.891510).  Saving model ...
+	iters: 100, epoch: 4 | loss: 0.7308408
+	speed: 0.4929s/iter; left time: 15391.5008s
+Epoch: 4 cost time: 12.946880578994751
+Epoch: 4, Steps: 159 | Train Loss: 0.7682194 Vali Loss: 0.8854219 Test Loss: 0.9510107
+is_saved
+  [LDE vis] Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.891510 --> 0.885422).  Saving model ...
+	iters: 100, epoch: 5 | loss: 0.8204319
+	speed: 0.4930s/iter; left time: 15315.5443s
+Epoch: 5 cost time: 12.42410659790039
+Epoch: 5, Steps: 159 | Train Loss: 0.7656509 Vali Loss: 0.8854657 Test Loss: 0.9457368
+is_saved
+  [LDE vis] Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 6 | loss: 0.7839979
+	speed: 0.4814s/iter; left time: 14879.2079s
+Epoch: 6 cost time: 12.369616746902466
+Epoch: 6, Steps: 159 | Train Loss: 0.7637815 Vali Loss: 0.8793412 Test Loss: 0.9492643
+is_saved
+  [LDE vis] Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.885422 --> 0.879341).  Saving model ...
+	iters: 100, epoch: 7 | loss: 0.7247646
+	speed: 0.4861s/iter; left time: 14946.3230s
+Epoch: 7 cost time: 12.965545177459717
+Epoch: 7, Steps: 159 | Train Loss: 0.7626067 Vali Loss: 0.8779941 Test Loss: 0.9543201
+is_saved
+  [LDE vis] Epoch 7 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.879341 --> 0.877994).  Saving model ...
+	iters: 100, epoch: 8 | loss: 0.7801562
+	speed: 0.4812s/iter; left time: 14720.4632s
+Epoch: 8 cost time: 12.485362768173218
+Epoch: 8, Steps: 159 | Train Loss: 0.7618048 Vali Loss: 0.8781036 Test Loss: 0.9483416
+is_saved
+  [LDE vis] Epoch 8 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 9 | loss: 0.7677746
+	speed: 0.4826s/iter; left time: 14684.8008s
+Epoch: 9 cost time: 12.088684320449829
+Epoch: 9, Steps: 159 | Train Loss: 0.7609587 Vali Loss: 0.8764896 Test Loss: 0.9453877
+is_saved
+  [LDE vis] Epoch 9 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.877994 --> 0.876490).  Saving model ...
+	iters: 100, epoch: 10 | loss: 0.7675792
+	speed: 0.4809s/iter; left time: 14556.6192s
+Epoch: 10 cost time: 12.48643970489502
+Epoch: 10, Steps: 159 | Train Loss: 0.7606719 Vali Loss: 0.8668427 Test Loss: 0.9613366
+is_saved
+  [LDE vis] Epoch 10 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.876490 --> 0.866843).  Saving model ...
+	iters: 100, epoch: 11 | loss: 0.7894384
+	speed: 0.4802s/iter; left time: 14458.6800s
+Epoch: 11 cost time: 12.097951889038086
+Epoch: 11, Steps: 159 | Train Loss: 0.7603136 Vali Loss: 0.8756064 Test Loss: 0.9482393
+is_saved
+  [LDE vis] Epoch 11 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 12 | loss: 0.7816384
+	speed: 0.4821s/iter; left time: 14439.4252s
+Epoch: 12 cost time: 12.391160488128662
+Epoch: 12, Steps: 159 | Train Loss: 0.7600325 Vali Loss: 0.8742762 Test Loss: 0.9496497
+is_saved
+  [LDE vis] Epoch 12 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 13 | loss: 0.7498958
+	speed: 0.4815s/iter; left time: 14345.8616s
+Epoch: 13 cost time: 12.733650922775269
+Epoch: 13, Steps: 159 | Train Loss: 0.7595402 Vali Loss: 0.8715708 Test Loss: 0.9480252
+is_saved
+  [LDE vis] Epoch 13 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 14 | loss: 0.7070188
+	speed: 0.4813s/iter; left time: 14263.2556s
+Epoch: 14 cost time: 12.623531103134155
+Epoch: 14, Steps: 159 | Train Loss: 0.7593782 Vali Loss: 0.8716832 Test Loss: 0.9530886
+is_saved
+  [LDE vis] Epoch 14 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 15 | loss: 0.7935362
+	speed: 0.4865s/iter; left time: 14338.6135s
+Epoch: 15 cost time: 12.313649892807007
+Epoch: 15, Steps: 159 | Train Loss: 0.7593921 Vali Loss: 0.8694682 Test Loss: 0.9512438
+is_saved
+  [LDE vis] Epoch 15 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9613364338874817, mae:0.7862140536308289
+>>>>>>>Overall time: 760 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.1295s/iter; left time: 4104.1373s
+Epoch: 1 cost time: 16.09423851966858
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 376, in train
+    self._visualize_lde(last_batch_x, epoch, setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 65, in _visualize_lde
+    _, traj = lde.rk4_integrate_with_trajectory(z0, gap_years, record_steps=60)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1965, in __getattr__
+    raise AttributeError(
+AttributeError: 'LatentDynamicsExtrapolator' object has no attribute 'rk4_integrate_with_trajectory'. Did you mean: 'euler_integrate_with_trajectory'?
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 312, in train
+    outputs = outputs[:, -self.args.pred_len:, f_dim:]
+              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7657139
+	speed: 0.3020s/iter; left time: 9573.8428s
+Epoch: 1 cost time: 46.77250576019287
+Epoch: 1, Steps: 159 | Train Loss: 0.8616791 Vali Loss: 0.9390739 Test Loss: 0.9695174
+  [LDE vis] gap=1.5y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.939074).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.6641082
+	speed: 1.4448s/iter; left time: 45572.3552s
+Epoch: 2 cost time: 38.285473108291626
+Epoch: 2, Steps: 159 | Train Loss: 0.6462278 Vali Loss: 1.0647897 Test Loss: 1.3067205
+  [LDE vis] gap=1.5y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 0.5215752
+	speed: 1.3392s/iter; left time: 42028.0958s
+Epoch: 3 cost time: 36.786301136016846
+Epoch: 3, Steps: 159 | Train Loss: 0.5487006 Vali Loss: 1.1520295 Test Loss: 1.3253006
+  [LDE vis] gap=1.5y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 0.4524474
+	speed: 1.3403s/iter; left time: 41848.4483s
+Epoch: 4 cost time: 37.44770932197571
+Epoch: 4, Steps: 159 | Train Loss: 0.5194091 Vali Loss: 1.1464771 Test Loss: 1.3039765
+  [LDE vis] gap=1.5y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 0.5649788
+	speed: 1.3278s/iter; left time: 41248.4012s
+Epoch: 5 cost time: 36.95580220222473
+Epoch: 5, Steps: 159 | Train Loss: 0.5029228 Vali Loss: 1.1644983 Test Loss: 1.3279207
+  [LDE vis] gap=1.5y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 0.5071762
+	speed: 1.3199s/iter; left time: 40792.8329s
+Epoch: 6 cost time: 37.02232122421265
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 369, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 237, in vali
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1421, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1411, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1323, in forward
+    loss_ode, loss_smooth = self.lde.ode_reconstruction_loss(x_scalar)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1188, in ode_reconstruction_loss
+    z_hat = self.rk4_integrate(z0, gap_years=0.5)
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1156, in rk4_integrate
+    k2 = self.ode_func(tau + dt/2,   z + dt/2 * k1)
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1103, in forward
+    return self.norm(z_spatial + z_time)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1772, in _wrapped_call_impl
+    def _wrapped_call_impl(self, *args, **kwargs):
+
+KeyboardInterrupt
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 4, in <module>
+    from exp.exp_long_term_forecasting import Exp_Long_Term_Forecast
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 55
+    elif(gap_day=730):
+         ^^^^^^^^^^^
+SyntaxError: invalid syntax. Maybe you meant '==' or ':=' instead of '='?
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7657139
+	speed: 0.2532s/iter; left time: 8025.3748s
+Epoch: 1 cost time: 39.238582611083984
+Epoch: 1, Steps: 159 | Train Loss: 0.8616791 Vali Loss: 0.9390739 Test Loss: 0.9695174
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.939074).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.6641082
+	speed: 1.3404s/iter; left time: 42277.7860s
+Epoch: 2 cost time: 36.56125569343567
+Epoch: 2, Steps: 159 | Train Loss: 0.6462278 Vali Loss: 1.0647897 Test Loss: 1.3067205
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 0.5215752
+	speed: 1.2985s/iter; left time: 40749.2592s
+Epoch: 3 cost time: 36.85963988304138
+Epoch: 3, Steps: 159 | Train Loss: 0.5487006 Vali Loss: 1.1520295 Test Loss: 1.3253006
+  [LDE vis] gap=1y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 0.4524474
+	speed: 1.3305s/iter; left time: 41544.7181s
+Epoch: 4 cost time: 37.22134709358215
+Epoch: 4, Steps: 159 | Train Loss: 0.5194091 Vali Loss: 1.1464771 Test Loss: 1.3039765
+  [LDE vis] gap=1y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 0.5649788
+	speed: 1.3270s/iter; left time: 41222.0710s
+Epoch: 5 cost time: 37.61231732368469
+Epoch: 5, Steps: 159 | Train Loss: 0.5029228 Vali Loss: 1.1644983 Test Loss: 1.3279207
+  [LDE vis] gap=1y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 0.5071762
+	speed: 1.3561s/iter; left time: 41912.0397s
+Epoch: 6 cost time: 43.29353594779968
+Epoch: 6, Steps: 159 | Train Loss: 0.4906228 Vali Loss: 1.2010789 Test Loss: 1.3746853
+  [LDE vis] gap=1y | Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9695171117782593, mae:0.7924785017967224
+>>>>>>>Overall time: 909 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.2762s/iter; left time: 8755.4961s
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 305, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1332, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1322, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1225, in forward
+    loss_mem = self.cem.contrastive_loss(q, season_q, year_q, gap_years=gap_years)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 988, in contrastive_loss
+    pos_idx = pos_mask[i].nonzero(as_tuple=True)[0]
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.2558s/iter; left time: 8109.6309s
+Epoch: 1 cost time: 38.386192321777344
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 1.1515s/iter; left time: 36320.7594s
+Epoch: 2 cost time: 40.24204111099243
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 1.1261s/iter; left time: 35340.7454s
+Epoch: 3 cost time: 39.236698627471924
+Epoch: 3, Steps: 159 | Train Loss: 0.7730265 Vali Loss: 0.8915099 Test Loss: 0.9526063
+  [LDE vis] gap=1y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.900380 --> 0.891510).  Saving model ...
+	iters: 100, epoch: 4 | loss: 0.7308408
+	speed: 1.1705s/iter; left time: 36547.3600s
+Epoch: 4 cost time: 41.93228054046631
+Epoch: 4, Steps: 159 | Train Loss: 0.7682194 Vali Loss: 0.8854219 Test Loss: 0.9510107
+  [LDE vis] gap=1y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.891510 --> 0.885422).  Saving model ...
+	iters: 100, epoch: 5 | loss: 0.8204319
+	speed: 1.1259s/iter; left time: 34974.6845s
+Epoch: 5 cost time: 37.25295948982239
+Epoch: 5, Steps: 159 | Train Loss: 0.7656509 Vali Loss: 0.8854657 Test Loss: 0.9457368
+  [LDE vis] gap=1y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 6 | loss: 0.7839979
+	speed: 1.1236s/iter; left time: 34725.8847s
+Epoch: 6 cost time: 41.01803708076477
+Epoch: 6, Steps: 159 | Train Loss: 0.7637815 Vali Loss: 0.8793412 Test Loss: 0.9492643
+  [LDE vis] gap=1y | Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.885422 --> 0.879341).  Saving model ...
+	iters: 100, epoch: 7 | loss: 0.7247646
+	speed: 1.1336s/iter; left time: 34853.4991s
+Epoch: 7 cost time: 36.98284387588501
+Epoch: 7, Steps: 159 | Train Loss: 0.7626067 Vali Loss: 0.8779941 Test Loss: 0.9543201
+  [LDE vis] gap=1y | Epoch 7 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.879341 --> 0.877994).  Saving model ...
+	iters: 100, epoch: 8 | loss: 0.7801562
+	speed: 1.1484s/iter; left time: 35126.7569s
+Epoch: 8 cost time: 40.557204484939575
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 366, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 234, in vali
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1332, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1322, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1225, in forward
+    loss_mem = self.cem.contrastive_loss(q, season_q, year_q, gap_years=gap_years)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 981, in contrastive_loss
+    season_match = (season_q.unsqueeze(1) == mem_seasons.unsqueeze(0))
+                    ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.2790s/iter; left time: 8843.7619s
+Epoch: 1 cost time: 41.51267170906067
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 1.1198s/iter; left time: 35322.1606s
+Epoch: 2 cost time: 37.15946936607361
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 319, in train
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1332, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1322, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1258, in forward
+    self.cem.update_memory(q.detach(), season_q.detach(), year_q.detach())
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/utils/_contextlib.py", line 124, in decorate_context
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 851, in update_memory
+    y = float(year_labels[i].item())
+              ^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.2427s/iter; left time: 7694.5992s
+Epoch: 1 cost time: 37.35763716697693
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 1.1186s/iter; left time: 35281.7103s
+Epoch: 2 cost time: 38.1413631439209
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 385, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 237, in vali
+    batch_x_mark = batch_x_mark.float().to(self.device)
+                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.2650s/iter; left time: 8400.0820s
+Epoch: 1 cost time: 33.14219093322754
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4937s/iter; left time: 15572.9667s
+Epoch: 2 cost time: 10.963473796844482
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4446s/iter; left time: 13952.9298s
+Epoch: 3 cost time: 9.775458335876465
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 385, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 253, in vali
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1332, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1322, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1224, in forward
+    h_cem, q = self.cem(x_scalar, season_q, year_q, gap_years=gap_years)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 947, in forward
+    retrieved = self.retrieve(q)  # [B, K, N, d_model]
+                ^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 870, in retrieve
+    valid_idx = self.memory_valid.nonzero(as_tuple=True)[0]
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0941s/iter; left time: 2982.5787s
+Epoch: 1 cost time: 12.934507846832275
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4412s/iter; left time: 13917.6341s
+Epoch: 2 cost time: 10.547158002853394
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4523s/iter; left time: 14193.1443s
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 297, in train
+    for i, (batch_x, batch_y, batch_x_mark, batch_y_mark) in enumerate(train_loader):
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 741, in __next__
+    data = self._next_data()
+           ^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1524, in _next_data
+    idx, data = self._get_data()
+                ^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1483, in _get_data
+    success, data = self._try_get_data()
+                    ^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/utils/data/dataloader.py", line 1310, in _try_get_data
+    data = self._data_queue.get(timeout=timeout)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/multiprocessing/queues.py", line 122, in get
+    return _ForkingPickler.loads(res)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/multiprocessing/reductions.py", line 111, in rebuild_tensor
+    t = torch._utils._rebuild_tensor(storage, storage_offset, size, stride)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/_utils.py", line 188, in _rebuild_tensor
+    t = torch.empty((0,), dtype=storage.dtype, device=storage._untyped_storage.device)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0685s/iter; left time: 2171.7036s
+Epoch: 1 cost time: 10.376048564910889
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4489s/iter; left time: 14157.9639s
+Epoch: 2 cost time: 10.598586559295654
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4512s/iter; left time: 14159.5204s
+Epoch: 3 cost time: 9.649812936782837
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 385, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 253, in vali
+    outputs = self.model(batch_x, batch_x_mark, dec_inp, batch_y_mark)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1332, in forward
+    out, sigma, aux = self.forecast(
+                      ^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1322, in forecast
+    z_out, sigma, aux = self.core(
+                        ^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1234, in forward
+    loss_ode, loss_smooth = self.lde.ode_reconstruction_loss(x_scalar)
+                            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1131, in ode_reconstruction_loss
+    z_mid = self.euler_integrate(z0, 0, max(1, half // 2))
+            ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1114, in euler_integrate
+    z = z + dt * self.ode_func(t, z)
+                 ^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1087, in forward
+    adj = self.adaptive_adj(t_feat)
+          ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/models/CAMEL.py", line 1080, in adaptive_adj
+    mod = self.time_mod(t_feat).reshape(-1, self.n_nodes, self.n_nodes)
+          ^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/container.py", line 253, in forward
+    input = module(input)
+            ^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1776, in _wrapped_call_impl
+    return self._call_impl(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/module.py", line 1787, in _call_impl
+    return forward_call(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/miniconda3/envs/xxltraffic/lib/python3.11/site-packages/torch/nn/modules/linear.py", line 134, in forward
+    return F.linear(input, self.weight, self.bias)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0702s/iter; left time: 2224.9420s
+Epoch: 1 cost time: 10.4980788230896
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 385, in train
+    test_loss = self.vali(test_data, test_loader, criterion)
+                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 257, in vali
+    batch_y = batch_y[:, -self.args.pred_len:, f_dim:].to(self.device)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+KeyboardInterrupt
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7696082
+	speed: 0.0814s/iter; left time: 2580.2656s
+Epoch: 1 cost time: 11.868395328521729
+Epoch: 1, Steps: 159 | Train Loss: 0.8644745 Vali Loss: 0.9190192 Test Loss: 0.9885878
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.919019).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.8472894
+	speed: 0.4455s/iter; left time: 14053.1393s
+Epoch: 2 cost time: 10.391147375106812
+Epoch: 2, Steps: 159 | Train Loss: 0.7833225 Vali Loss: 0.9003802 Test Loss: 0.9565644
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.919019 --> 0.900380).  Saving model ...
+	iters: 100, epoch: 3 | loss: 0.8055486
+	speed: 0.4575s/iter; left time: 14358.5701s
+Epoch: 3 cost time: 11.164526462554932
+Epoch: 3, Steps: 159 | Train Loss: 0.7730265 Vali Loss: 0.8915099 Test Loss: 0.9526063
+  [LDE vis] gap=1y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.900380 --> 0.891510).  Saving model ...
+	iters: 100, epoch: 4 | loss: 0.7308408
+	speed: 0.4390s/iter; left time: 13706.3454s
+Epoch: 4 cost time: 9.546272277832031
+Epoch: 4, Steps: 159 | Train Loss: 0.7682194 Vali Loss: 0.8854219 Test Loss: 0.9510107
+  [LDE vis] gap=1y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.891510 --> 0.885422).  Saving model ...
+	iters: 100, epoch: 5 | loss: 0.8204319
+	speed: 0.4457s/iter; left time: 13844.7429s
+Epoch: 5 cost time: 10.465786933898926
+Epoch: 5, Steps: 159 | Train Loss: 0.7656509 Vali Loss: 0.8854657 Test Loss: 0.9457368
+  [LDE vis] gap=1y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 6 | loss: 0.7839979
+	speed: 0.4428s/iter; left time: 13684.4146s
+Epoch: 6 cost time: 10.361318111419678
+Epoch: 6, Steps: 159 | Train Loss: 0.7637815 Vali Loss: 0.8793412 Test Loss: 0.9492643
+  [LDE vis] gap=1y | Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.885422 --> 0.879341).  Saving model ...
+	iters: 100, epoch: 7 | loss: 0.7247646
+	speed: 0.4388s/iter; left time: 13490.9310s
+Epoch: 7 cost time: 10.516109943389893
+Epoch: 7, Steps: 159 | Train Loss: 0.7626067 Vali Loss: 0.8779941 Test Loss: 0.9543201
+  [LDE vis] gap=1y | Epoch 7 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.879341 --> 0.877994).  Saving model ...
+	iters: 100, epoch: 8 | loss: 0.7801562
+	speed: 0.4436s/iter; left time: 13568.5793s
+Epoch: 8 cost time: 10.423698663711548
+Epoch: 8, Steps: 159 | Train Loss: 0.7618048 Vali Loss: 0.8781036 Test Loss: 0.9483416
+  [LDE vis] gap=1y | Epoch 8 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 9 | loss: 0.7677746
+	speed: 0.4381s/iter; left time: 13330.1521s
+Epoch: 9 cost time: 9.642529964447021
+Epoch: 9, Steps: 159 | Train Loss: 0.7609587 Vali Loss: 0.8764896 Test Loss: 0.9453877
+  [LDE vis] gap=1y | Epoch 9 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.877994 --> 0.876490).  Saving model ...
+	iters: 100, epoch: 10 | loss: 0.7675792
+	speed: 0.5196s/iter; left time: 15728.4619s
+Epoch: 10 cost time: 13.31677794456482
+Epoch: 10, Steps: 159 | Train Loss: 0.7606719 Vali Loss: 0.8668427 Test Loss: 0.9613366
+  [LDE vis] gap=1y | Epoch 10 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (0.876490 --> 0.866843).  Saving model ...
+	iters: 100, epoch: 11 | loss: 0.7894384
+	speed: 0.4448s/iter; left time: 13392.6279s
+Epoch: 11 cost time: 9.423912763595581
+Epoch: 11, Steps: 159 | Train Loss: 0.7603136 Vali Loss: 0.8756064 Test Loss: 0.9482393
+  [LDE vis] gap=1y | Epoch 11 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 12 | loss: 0.7816384
+	speed: 0.4426s/iter; left time: 13256.3500s
+Epoch: 12 cost time: 10.469424962997437
+Epoch: 12, Steps: 159 | Train Loss: 0.7600325 Vali Loss: 0.8742762 Test Loss: 0.9496497
+  [LDE vis] gap=1y | Epoch 12 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 13 | loss: 0.7498958
+	speed: 0.4431s/iter; left time: 13202.0948s
+Epoch: 13 cost time: 10.346553802490234
+Epoch: 13, Steps: 159 | Train Loss: 0.7595402 Vali Loss: 0.8715708 Test Loss: 0.9480252
+  [LDE vis] gap=1y | Epoch 13 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 14 | loss: 0.7070188
+	speed: 0.4413s/iter; left time: 13076.7312s
+Epoch: 14 cost time: 10.509727716445923
+Epoch: 14, Steps: 159 | Train Loss: 0.7593782 Vali Loss: 0.8716832 Test Loss: 0.9530886
+  [LDE vis] gap=1y | Epoch 14 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 15 | loss: 0.7935362
+	speed: 0.4491s/iter; left time: 13237.3719s
+Epoch: 15 cost time: 10.5207998752594
+Epoch: 15, Steps: 159 | Train Loss: 0.7593921 Vali Loss: 0.8694682 Test Loss: 0.9512438
+  [LDE vis] gap=1y | Epoch 15 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9613364338874817, mae:0.7862140536308289
+>>>>>>>Overall time: 707 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+Traceback (most recent call last):
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/run.py", line 256, in <module>
+    exp.train(setting)
+  File "/home/cyrilyuan/projects/XXLTraffic-main/gap/exp/exp_long_term_forecasting.py", line 327, in train
+    outputs = outputs[:, -self.args.pred_len:, f_dim:]
+              ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+TypeError: tuple indices must be integers or slices, not tuple
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7657139
+	speed: 0.2174s/iter; left time: 6891.4944s
+Epoch: 1 cost time: 34.10262489318848
+Epoch: 1, Steps: 159 | Train Loss: 0.8616791 Vali Loss: 0.9390739 Test Loss: 0.9695174
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.939074).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.6641082
+	speed: 1.2349s/iter; left time: 38951.3858s
+Epoch: 2 cost time: 33.29694223403931
+Epoch: 2, Steps: 159 | Train Loss: 0.6462278 Vali Loss: 1.0647897 Test Loss: 1.3067205
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 0.5215752
+	speed: 1.2408s/iter; left time: 38941.0923s
+Epoch: 3 cost time: 33.46733283996582
+Epoch: 3, Steps: 159 | Train Loss: 0.5487006 Vali Loss: 1.1520295 Test Loss: 1.3253006
+  [LDE vis] gap=1y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 0.4524474
+	speed: 1.2503s/iter; left time: 39039.6079s
+Epoch: 4 cost time: 33.32445788383484
+Epoch: 4, Steps: 159 | Train Loss: 0.5194091 Vali Loss: 1.1464771 Test Loss: 1.3039765
+  [LDE vis] gap=1y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 0.5649788
+	speed: 1.2809s/iter; left time: 39790.4311s
+Epoch: 5 cost time: 34.52248406410217
+Epoch: 5, Steps: 159 | Train Loss: 0.5029228 Vali Loss: 1.1644983 Test Loss: 1.3279207
+  [LDE vis] gap=1y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 0.5071762
+	speed: 1.2994s/iter; left time: 40159.3353s
+Epoch: 6 cost time: 36.66146397590637
+Epoch: 6, Steps: 159 | Train Loss: 0.4906228 Vali Loss: 1.2010789 Test Loss: 1.3746853
+  [LDE vis] gap=1y | Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9695171117782593, mae:0.7924785017967224
+>>>>>>>Overall time: 848 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_365_exp', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=False, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 51068
+val 11152
+test 11151
+	iters: 100, epoch: 1 | loss: 0.7657139
+	speed: 0.2271s/iter; left time: 7198.2237s
+Epoch: 1 cost time: 35.44649624824524
+Epoch: 1, Steps: 159 | Train Loss: 0.8616791 Vali Loss: 0.9390739 Test Loss: 0.9695174
+  [LDE vis] gap=1y | Epoch 1 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+Validation loss decreased (inf --> 0.939074).  Saving model ...
+	iters: 100, epoch: 2 | loss: 0.6641082
+	speed: 1.2574s/iter; left time: 39661.2059s
+Epoch: 2 cost time: 34.70045828819275
+Epoch: 2, Steps: 159 | Train Loss: 0.6462278 Vali Loss: 1.0647897 Test Loss: 1.3067205
+  [LDE vis] gap=1y | Epoch 2 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 0.5215752
+	speed: 1.2555s/iter; left time: 39402.4799s
+Epoch: 3 cost time: 32.4290132522583
+Epoch: 3, Steps: 159 | Train Loss: 0.5487006 Vali Loss: 1.1520295 Test Loss: 1.3253006
+  [LDE vis] gap=1y | Epoch 3 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 0.4524474
+	speed: 1.2499s/iter; left time: 39027.4516s
+Epoch: 4 cost time: 32.464927673339844
+Epoch: 4, Steps: 159 | Train Loss: 0.5194091 Vali Loss: 1.1464771 Test Loss: 1.3039765
+  [LDE vis] gap=1y | Epoch 4 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 0.5649788
+	speed: 1.2768s/iter; left time: 39662.4212s
+Epoch: 5 cost time: 36.65176963806152
+Epoch: 5, Steps: 159 | Train Loss: 0.5029228 Vali Loss: 1.1644983 Test Loss: 1.3279207
+  [LDE vis] gap=1y | Epoch 5 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 0.5071762
+	speed: 1.2468s/iter; left time: 38532.9475s
+Epoch: 6 cost time: 35.6296808719635
+Epoch: 6, Steps: 159 | Train Loss: 0.4906228 Vali Loss: 1.2010789 Test Loss: 1.3746853
+  [LDE vis] gap=1y | Epoch 6 → ./lde_vis/long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_365_exp_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 11151
+test shape: (1115, 1, 96, 27) (1115, 1, 96, 27)
+test shape: (1115, 96, 27) (1115, 96, 27)
+mse:0.9695171117782593, mae:0.7924785017967224
+>>>>>>>Overall time: 840 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

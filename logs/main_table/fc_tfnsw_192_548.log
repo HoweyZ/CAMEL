@@ -1,0 +1,42 @@
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=548, task_name='long_term_forecast', is_training=1, model_id='tfnsw_fc_96_192_548', model='FreqCycle', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=192, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.3, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='test', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=0.0, camel_memory_size=1196, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.1, lambda_ode=0.05, lambda_smooth=0.01, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=True, revin_affine=False, revin_eps=1e-05, lpf=16, cycle=24, model_type='mlp', seg_window=24, seg_stride=12, window_type='hann')
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_fc_96_192_548_FreqCycle_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap548_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 46580
+val 6664
+test 6663
+	iters: 100, epoch: 1 | loss: 1.0853748
+	speed: 0.0197s/iter; left time: 570.3592s
+Epoch: 1 cost time: 1.817664384841919
+Epoch: 1, Steps: 145 | Train Loss: 1.2116266 Vali Loss: 0.9597485 Test Loss: 1.0003554
+Validation loss decreased (inf --> 0.959749).  Saving model ...
+	iters: 100, epoch: 2 | loss: 1.0453125
+	speed: 0.0282s/iter; left time: 810.7186s
+Epoch: 2 cost time: 0.814408540725708
+Epoch: 2, Steps: 145 | Train Loss: 1.1298070 Vali Loss: 0.9677102 Test Loss: 0.9440291
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 3 | loss: 1.1558127
+	speed: 0.0275s/iter; left time: 785.3865s
+Epoch: 3 cost time: 0.8286764621734619
+Epoch: 3, Steps: 145 | Train Loss: 1.0999850 Vali Loss: 1.0040106 Test Loss: 0.9465167
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 4 | loss: 1.1531460
+	speed: 0.0278s/iter; left time: 790.6236s
+Epoch: 4 cost time: 0.8330869674682617
+Epoch: 4, Steps: 145 | Train Loss: 1.0824316 Vali Loss: 1.0271588 Test Loss: 0.9557625
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 5 | loss: 1.0769322
+	speed: 0.0266s/iter; left time: 754.2658s
+Epoch: 5 cost time: 0.7724158763885498
+Epoch: 5, Steps: 145 | Train Loss: 1.0732232 Vali Loss: 1.0398486 Test Loss: 0.9693344
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 6 | loss: 1.0966624
+	speed: 0.0271s/iter; left time: 764.5648s
+Epoch: 6 cost time: 0.7953171730041504
+Epoch: 6, Steps: 145 | Train Loss: 1.0698605 Vali Loss: 1.0440650 Test Loss: 0.9600208
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_fc_96_192_548_FreqCycle_custom_ftM_sl96_ll48_pl192_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap548_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 6663
+mse:1.000355839729309, mae:0.7619192600250244
+>>>>>>>Overall time: 18 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

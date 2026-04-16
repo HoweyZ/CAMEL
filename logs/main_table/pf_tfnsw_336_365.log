@@ -1,0 +1,122 @@
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=365, task_name='long_term_forecast', is_training=1, model_id='tfnsw_pf_96_336_365', model='PhaseFormer', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=336, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=1, distil=True, dropout=0.3, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='test', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=0.0, camel_memory_size=1196, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.1, lambda_ode=0.05, lambda_smooth=0.01, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf=False, use_which_ode=0, camel_tau=0.1, camel_sim_threshold=0.5, camel_sim_scale=10.0, camel_tau_contrast=0.07, patch_len=24, alpha=0.1, top_p=0.5, pos=False, num_class=2, period_len=24, latent_dim=8, phase_encoder_hidden=32, predictor_hidden=64, phase_attn_heads=4, phase_attn_dropout=0.0, phase_attn_use_relpos=False, phase_attn_window=0, phase_attention_dim=0, phase_num_routers=8, phase_use_pos_embed=False, phase_pos_dropout=0.0, phase_layers=1, phase_encoder_use_mlp=False, phase_encoder_dropout=0.0, predictor_use_mlp=False, predictor_dropout=0.0, use_revin=True, revin_affine=False, revin_eps=1e-05)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_pf_96_336_365_PhaseFormer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_test_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 50828
+val 10912
+test 10911
+	iters: 100, epoch: 1 | loss: 1.2421211
+	speed: 0.0128s/iter; left time: 404.7010s
+Epoch: 1 cost time: 1.1771581172943115
+Epoch: 1, Steps: 158 | Train Loss: 1.3315966 Vali Loss: 1.1194395 Test Loss: 1.3582913
+Validation loss decreased (inf --> 1.119439).  Saving model ...
+	iters: 100, epoch: 2 | loss: 1.1185899
+	speed: 0.0308s/iter; left time: 964.9458s
+Epoch: 2 cost time: 0.7990748882293701
+Epoch: 2, Steps: 158 | Train Loss: 1.1075640 Vali Loss: 1.0277212 Test Loss: 1.1985976
+Validation loss decreased (1.119439 --> 1.027721).  Saving model ...
+	iters: 100, epoch: 3 | loss: 1.1365566
+	speed: 0.0317s/iter; left time: 987.4214s
+Epoch: 3 cost time: 0.7735090255737305
+Epoch: 3, Steps: 158 | Train Loss: 1.0606306 Vali Loss: 0.9683725 Test Loss: 1.1143784
+Validation loss decreased (1.027721 --> 0.968372).  Saving model ...
+	iters: 100, epoch: 4 | loss: 1.0848414
+	speed: 0.0310s/iter; left time: 962.4167s
+Epoch: 4 cost time: 0.7868831157684326
+Epoch: 4, Steps: 158 | Train Loss: 1.0407786 Vali Loss: 0.9464290 Test Loss: 1.0521447
+Validation loss decreased (0.968372 --> 0.946429).  Saving model ...
+	iters: 100, epoch: 5 | loss: 0.9836171
+	speed: 0.0304s/iter; left time: 938.0031s
+Epoch: 5 cost time: 0.7637217044830322
+Epoch: 5, Steps: 158 | Train Loss: 1.0328035 Vali Loss: 0.9292756 Test Loss: 1.0364809
+Validation loss decreased (0.946429 --> 0.929276).  Saving model ...
+	iters: 100, epoch: 6 | loss: 0.9818662
+	speed: 0.0305s/iter; left time: 937.7321s
+Epoch: 6 cost time: 0.7767434120178223
+Epoch: 6, Steps: 158 | Train Loss: 1.0265188 Vali Loss: 0.9095735 Test Loss: 1.0285902
+Validation loss decreased (0.929276 --> 0.909574).  Saving model ...
+	iters: 100, epoch: 7 | loss: 0.9926049
+	speed: 0.0253s/iter; left time: 773.1653s
+Epoch: 7 cost time: 0.7631299495697021
+Epoch: 7, Steps: 158 | Train Loss: 1.0233134 Vali Loss: 0.9029081 Test Loss: 1.0209973
+Validation loss decreased (0.909574 --> 0.902908).  Saving model ...
+	iters: 100, epoch: 8 | loss: 0.9638600
+	speed: 0.0314s/iter; left time: 953.1767s
+Epoch: 8 cost time: 0.8021316528320312
+Epoch: 8, Steps: 158 | Train Loss: 1.0216648 Vali Loss: 0.9086393 Test Loss: 0.9968176
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 9 | loss: 1.0489928
+	speed: 0.0310s/iter; left time: 937.5380s
+Epoch: 9 cost time: 0.7856576442718506
+Epoch: 9, Steps: 158 | Train Loss: 1.0196491 Vali Loss: 0.9000208 Test Loss: 1.0026439
+Validation loss decreased (0.902908 --> 0.900021).  Saving model ...
+	iters: 100, epoch: 10 | loss: 1.0130572
+	speed: 0.0313s/iter; left time: 941.1071s
+Epoch: 10 cost time: 0.7712550163269043
+Epoch: 10, Steps: 158 | Train Loss: 1.0183788 Vali Loss: 0.9115885 Test Loss: 0.9834296
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 11 | loss: 1.1123533
+	speed: 0.0329s/iter; left time: 984.3227s
+Epoch: 11 cost time: 0.8451023101806641
+Epoch: 11, Steps: 158 | Train Loss: 1.0174858 Vali Loss: 0.8937498 Test Loss: 1.0101314
+Validation loss decreased (0.900021 --> 0.893750).  Saving model ...
+	iters: 100, epoch: 12 | loss: 0.9690684
+	speed: 0.0329s/iter; left time: 978.8786s
+Epoch: 12 cost time: 0.8045978546142578
+Epoch: 12, Steps: 158 | Train Loss: 1.0172707 Vali Loss: 0.9022311 Test Loss: 0.9913593
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 13 | loss: 0.9465401
+	speed: 0.0317s/iter; left time: 938.7145s
+Epoch: 13 cost time: 0.87516188621521
+Epoch: 13, Steps: 158 | Train Loss: 1.0157948 Vali Loss: 0.8917870 Test Loss: 0.9994741
+Validation loss decreased (0.893750 --> 0.891787).  Saving model ...
+	iters: 100, epoch: 14 | loss: 1.0577850
+	speed: 0.0316s/iter; left time: 929.8214s
+Epoch: 14 cost time: 0.8122715950012207
+Epoch: 14, Steps: 158 | Train Loss: 1.0152225 Vali Loss: 0.8974993 Test Loss: 0.9925390
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 15 | loss: 1.1399302
+	speed: 0.0321s/iter; left time: 941.1525s
+Epoch: 15 cost time: 0.7999823093414307
+Epoch: 15, Steps: 158 | Train Loss: 1.0143756 Vali Loss: 0.8956921 Test Loss: 0.9992016
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 16 | loss: 1.0954090
+	speed: 0.0319s/iter; left time: 927.8605s
+Epoch: 16 cost time: 0.8822424411773682
+Epoch: 16, Steps: 158 | Train Loss: 1.0134604 Vali Loss: 0.8926431 Test Loss: 1.0004734
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 17 | loss: 0.9476154
+	speed: 0.0256s/iter; left time: 740.9174s
+Epoch: 17 cost time: 0.7820661067962646
+Epoch: 17, Steps: 158 | Train Loss: 1.0135033 Vali Loss: 0.8905573 Test Loss: 1.0179086
+Validation loss decreased (0.891787 --> 0.890557).  Saving model ...
+	iters: 100, epoch: 18 | loss: 1.0481846
+	speed: 0.0313s/iter; left time: 902.2319s
+Epoch: 18 cost time: 0.775183916091919
+Epoch: 18, Steps: 158 | Train Loss: 1.0127363 Vali Loss: 0.8942525 Test Loss: 0.9912086
+EarlyStopping counter: 1 out of 5
+	iters: 100, epoch: 19 | loss: 1.0322974
+	speed: 0.0316s/iter; left time: 906.3273s
+Epoch: 19 cost time: 0.7851877212524414
+Epoch: 19, Steps: 158 | Train Loss: 1.0126785 Vali Loss: 0.8928964 Test Loss: 0.9991824
+EarlyStopping counter: 2 out of 5
+	iters: 100, epoch: 20 | loss: 0.9352553
+	speed: 0.0312s/iter; left time: 890.3625s
+Epoch: 20 cost time: 0.7582223415374756
+Epoch: 20, Steps: 158 | Train Loss: 1.0116454 Vali Loss: 0.8945792 Test Loss: 0.9813114
+EarlyStopping counter: 3 out of 5
+	iters: 100, epoch: 21 | loss: 1.0874795
+	speed: 0.0307s/iter; left time: 870.3282s
+Epoch: 21 cost time: 0.7793140411376953
+Epoch: 21, Steps: 158 | Train Loss: 1.0111680 Vali Loss: 0.8955455 Test Loss: 0.9954561
+EarlyStopping counter: 4 out of 5
+	iters: 100, epoch: 22 | loss: 0.8692753
+	speed: 0.0314s/iter; left time: 884.0416s
+Epoch: 22 cost time: 0.7835981845855713
+Epoch: 22, Steps: 158 | Train Loss: 1.0105988 Vali Loss: 0.8950822 Test Loss: 1.0196049
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_pf_96_336_365_PhaseFormer_custom_ftM_sl96_ll48_pl336_dm512_nh8_el2_dl1_df2048_fc1_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap365_test_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 10911
+mse:1.0179088115692139, mae:0.7724732160568237
+>>>>>>>Overall time: 71 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<

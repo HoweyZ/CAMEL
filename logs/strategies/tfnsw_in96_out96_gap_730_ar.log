@@ -1,0 +1,64 @@
+Args in experiment:
+Namespace(samle_rate=0.1, sample_seed=7, train_seed=2024, gap_day=730, task_name='long_term_forecast', is_training=1, model_id='tfnsw_all_96_96_730_checkode1_withmem', model='CAMEL', data='custom', root_path='/home/cyrilyuan/projects/XXLTraffic-main/data/pems/', data_path='tfnsw.csv', features='M', target='', freq='h', checkpoints='./checkpoints/', seq_len=96, label_len=48, pred_len=96, seasonal_patterns='Monthly', inverse=False, mask_rate=0.25, anomaly_ratio=0.25, expand=2, d_conv=4, top_k=5, num_kernels=6, enc_in=27, dec_in=27, c_out=27, d_model=512, n_heads=8, e_layers=2, d_layers=1, d_ff=2048, moving_avg=25, factor=3, distil=True, dropout=0.3, embed='timeF', activation='gelu', output_attention=False, num_workers=10, itr=1, train_epochs=200, batch_size=32, patience=5, learning_rate=0.0005, des='CAMEL', loss='MSE', lradj='type3', use_amp=False, enable_camel=False, camel_gap_years=1.5, camel_memory_size=1024, camel_k_retrieve=8, camel_latent_dim=32, camel_d_model=32, camel_use_nll=False, lambda_mem=0.0, lambda_ode=0.01, lambda_smooth=0.0, camel_min_year_gap=1.0, camel_gap_tolerance=0.25, use_gpu=True, gpu=0, use_multi_gpu=False, devices='0,1,2,3', p_hidden_dims=[128, 128], p_hidden_layers=2, steps_per_day=24, ablate_memory=False, ablate_ode=False, ablate_atf_avg=False, use_which_ode=1)
+Use GPU: cuda:0
+>>>>>>>start training : long_term_forecast_tfnsw_all_96_96_730_checkode1_withmem_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap730_CAMEL_0>>>>>>>>>>>>>>>>>>>>>>>>>>
+train 42308
+val 2392
+test 2391
+loss: 0.7909 | [███████-------------------------------------------]
+	iters: 100, epoch: 1 | loss: 0.7909592
+	speed: 0.0832s/iter; left time: 2187.1300s
+Epoch: 1 cost time: 10.23477554321289
+loss: 1.2727 | [████████████--------------------------------------]
+loss: 1.1761 | [███████████---------------------------------------]
+Epoch: 1, Steps: 132 | Train Loss: 0.9136076 Vali Loss: 1.1441641 Test Loss: 1.2521287
+Validation loss decreased (inf --> 1.144164).  Saving model ...
+loss: 0.8326 | [████████------------------------------------------]
+	iters: 100, epoch: 2 | loss: 0.7447427
+	speed: 0.1137s/iter; left time: 2974.4588s
+loss: 0.7663 | [███████-------------------------------------------]
+Epoch: 2 cost time: 8.714799642562866
+loss: 1.3315 | [█████████████-------------------------------------]
+loss: 1.3998 | [█████████████-------------------------------------]
+Epoch: 2, Steps: 132 | Train Loss: 0.7816247 Vali Loss: 1.2406585 Test Loss: 1.3783276
+EarlyStopping counter: 1 out of 5
+loss: 0.6977 | [██████--------------------------------------------]
+	iters: 100, epoch: 3 | loss: 0.6702347
+	speed: 0.1102s/iter; left time: 2868.5162s
+Epoch: 3 cost time: 10.161927938461304
+loss: 1.4831 | [██████████████------------------------------------]
+loss: 1.3249 | [█████████████-------------------------------------]
+loss: 1.5194 | [███████████████-----------------------------------]
+Epoch: 3, Steps: 132 | Train Loss: 0.7201355 Vali Loss: 1.2629331 Test Loss: 1.4518963
+EarlyStopping counter: 2 out of 5
+loss: 0.7026 | [███████-------------------------------------------]
+	iters: 100, epoch: 4 | loss: 0.7094145
+	speed: 0.1229s/iter; left time: 3183.2340s
+Epoch: 4 cost time: 10.04363751411438
+loss: 1.4607 | [██████████████------------------------------------]
+loss: 1.3683 | [█████████████-------------------------------------]
+loss: 1.4286 | [██████████████------------------------------------]
+Epoch: 4, Steps: 132 | Train Loss: 0.6962952 Vali Loss: 1.2649400 Test Loss: 1.4356657
+EarlyStopping counter: 3 out of 5
+loss: 0.7100 | [███████-------------------------------------------]
+	iters: 100, epoch: 5 | loss: 0.6758172
+	speed: 0.1122s/iter; left time: 2891.8392s
+Epoch: 5 cost time: 9.459609985351562
+loss: 1.3734 | [█████████████-------------------------------------]
+loss: 1.3119 | [█████████████-------------------------------------]
+Epoch: 5, Steps: 132 | Train Loss: 0.6824300 Vali Loss: 1.1959806 Test Loss: 1.3444908
+EarlyStopping counter: 4 out of 5
+loss: 0.6686 | [██████--------------------------------------------]
+	iters: 100, epoch: 6 | loss: 0.6545371
+	speed: 0.1112s/iter; left time: 2850.3251s
+loss: 0.6502 | [██████--------------------------------------------]
+Epoch: 6 cost time: 9.370455503463745
+loss: 1.4166 | [██████████████------------------------------------]
+loss: 1.5137 | [███████████████-----------------------------------]
+Epoch: 6, Steps: 132 | Train Loss: 0.6731726 Vali Loss: 1.2590900 Test Loss: 1.4192871
+EarlyStopping counter: 5 out of 5
+Early stopping
+>>>>>>>testing : long_term_forecast_tfnsw_all_96_96_730_checkode1_withmem_CAMEL_custom_ftM_sl96_ll48_pl96_dm512_nh8_el2_dl1_df2048_fc3_ebtimeF_dtTrue_srate0.1_sseed7_trainseed2024_gap730_CAMEL_0<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
+test 2391
+mse:1.2521156072616577, mae:0.8838025331497192
+>>>>>>>Overall time: 70 seconds<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<
